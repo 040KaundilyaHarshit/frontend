@@ -95,7 +95,7 @@ const ApplicationForm = () => {
   useEffect(() => {
     const fetchFormStructure = async () => {
       try {
-        const response = await axios.get(`${process.env.VITE_BACKEND_URL}/api/forms/get-form-structure/${courseId}`, {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/forms/get-form-structure/${courseId}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setFormStructure({
@@ -124,7 +124,7 @@ const ApplicationForm = () => {
           return;
         }
         const response = await axios.get(
-          `${process.env.VITE_BACKEND_URL}/api/applications/get-application/${studentId}/${courseId}`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/applications/get-application/${studentId}/${courseId}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -185,7 +185,7 @@ const ApplicationForm = () => {
       });
 
       const response = await axios.post(
-        `${process.env.VITE_BACKEND_URL}/api/applications/save-draft`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/applications/save-draft`,
         submissionData,
         {
           headers: {
@@ -276,7 +276,7 @@ const ApplicationForm = () => {
         }
 
         const response = await axios.post(
-          `${process.env.VITE_BACKEND_URL}/api/applications/submit-application`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/applications/submit-application`,
           submissionData,
           {
             headers: {

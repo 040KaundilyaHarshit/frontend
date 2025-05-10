@@ -10,7 +10,7 @@ const Notifications = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API_BASE_URL = `${process.env.VITE_BACKEND_URL}/api`;
+  const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL}/api`;
   
 
   const getAuthHeaders = () => {
@@ -39,7 +39,7 @@ const Notifications = () => {
   const markAsRead = async (applicationId) => {
     try {
       await axios.post(
-        `${process.env.VITE_BACKEND_URL}/student-notifications/mark-comments-read/${applicationId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/student-notifications/mark-comments-read/${applicationId}`,
         {},
         getAuthHeaders()
       );

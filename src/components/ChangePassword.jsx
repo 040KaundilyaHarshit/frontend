@@ -51,7 +51,7 @@ const ChangePassword = () => {
       const token = localStorage.getItem("token");
 
       const response = await axios.put(
-        `${process.env.VITE_BACKEND_URL}/change-password`,
+        `${import.meta.env.VITE_BACKEND_URL}/change-password`,
         {
           currentPassword,
           newPassword,

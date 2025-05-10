@@ -25,7 +25,7 @@ const RoleCreation = () => {
 
     try {
       const res = await axios.post(
-        `${process.env.VITE_BACKEND_URL}/api/users/create`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/users/create`,
         formData,
         {
           headers: {

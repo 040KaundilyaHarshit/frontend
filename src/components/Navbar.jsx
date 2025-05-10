@@ -12,7 +12,7 @@ const Navbar = () => {
   const [unreadCount, setUnreadCount] = useState(0);
 
   {/*route for fetching unread notifications. */}
-  const API_BASE_URL = `${process.env.VITE_BACKEND_URL}`;
+  const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL}`;
 
   const getAuthHeaders = () => {
     const token = localStorage.getItem("token");

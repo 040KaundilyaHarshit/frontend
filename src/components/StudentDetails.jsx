@@ -13,7 +13,7 @@ const StudentDetails = () => {
   useEffect(() => {
     const fetchStudentDetails = async () => {
       try {
-        const res = await axios.get(`${process.env.VITE_BACKEND_URL}/api/users/${id}`, {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/users/${id}`, {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem("token")}`,
           },

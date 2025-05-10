@@ -26,7 +26,7 @@ const Home = () => {
         return;
       }
 
-      const response = await axios.get(`${process.env.VITE_BACKEND_URL}/api/users/${userId}`, {
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -47,7 +47,7 @@ const Home = () => {
         return;
       }
 
-      const response = await axios.get(`${process.env.VITE_BACKEND_URL}/api/notices`, {
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/notices`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -68,7 +68,7 @@ const Home = () => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`${process.env.VITE_BACKEND_URL}/api/notices/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/notices/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

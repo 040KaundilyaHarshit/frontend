@@ -4,8 +4,8 @@ import { MdDarkMode, MdLightMode, MdOutlineVerified, MdOutlineCancel } from "rea
 import { FaSearch, FaUsers, FaBook } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./VerificationAdminDashboard.css";
-
-const API_BASE_URL = `${process.env.VITE_BACKEND_URL}/api`;
+console.log(process.env.VITE_BACKEND_URL);
+const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL}/api`;
 
 const VerificationAdminDashboard = () => {
   const [students, setStudents] = useState([]);
@@ -176,7 +176,7 @@ const VerificationAdminDashboard = () => {
     setCourseApplications([]);
     try {
       const res = await axios.post(
-        `${process.env.VITE_BACKEND_URL}/verification-admin/courses/${selectedCourse._id}/assign-officers`,
+        `${import.meta.env.VITE_BACKEND_URL}/verification-admin/courses/${selectedCourse._id}/assign-officers`,
         { batchSize },
         getAuthHeaders()
       );
@@ -204,7 +204,7 @@ const VerificationAdminDashboard = () => {
     setCourseApplications([]);
     try {
       const res = await axios.post(
-        `${process.env.VITE_BACKEND_URL}/verification-admin/courses/${selectedCourse._id}/unassign-officers`,
+        `${import.meta.env.VITE_BACKEND_URL}/verification-admin/courses/${selectedCourse._id}/unassign-officers`,
         {},
         getAuthHeaders()
       );

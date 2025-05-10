@@ -17,7 +17,8 @@ const Register = () => {
     try {
       setLoading(true);
       // const res = await axios.post("https://backend-silk-tau-85.vercel.app/register", {
-      const res = await axios.post(`${process.env.VITE_BACKEND_URL}/register`, {
+      console.log(process.env.VITE_BACKEND_URL);
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`, {
         name,
         email,
         password,

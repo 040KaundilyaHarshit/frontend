@@ -10,7 +10,7 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 import "./VerificationOfficerDashboard.css";
 
 // API Base URL
-const API_BASE_URL = `${process.env.VITE_BACKEND_URL}/api`;
+const API_BASE_URL = `${import.meta.env.VITE_BACKEND_URL}/api`;
 
 const VerificationOfficerDashboard = () => {
   const [assignedApplications, setAssignedApplications] = useState([]);
@@ -115,7 +115,7 @@ const VerificationOfficerDashboard = () => {
 
     try {
       const res = await axios.post(
-        `${process.env.VITE_BACKEND_URL}/verification-officer/verify-application/${applicationId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/verification-officer/verify-application/${applicationId}`,
         { verified, comments, fieldComments },
         getAuthHeaders()
       );
@@ -131,7 +131,7 @@ const VerificationOfficerDashboard = () => {
   const saveComments = async (applicationId) => {
     try {
       const res = await axios.post(
-        `${process.env.VITE_BACKEND_URL}/verification-officer/save-application-comments/${applicationId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/verification-officer/save-application-comments/${applicationId}`,
         { comments, fieldComments },
         getAuthHeaders()
       );

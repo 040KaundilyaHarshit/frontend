@@ -21,7 +21,7 @@ const VerificationOfficerCreation = () => {
     const fetchCourses = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get(`${process.env.VITE_BACKEND_URL}/api/courses`, {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/courses`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setCourses(res.data);
@@ -64,7 +64,7 @@ const VerificationOfficerCreation = () => {
 
     try {
       const res = await axios.post(
-        `${process.env.VITE_BACKEND_URL}/api/users/create`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/users/create`,
         formData,
         {
           headers: {

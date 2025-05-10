@@ -15,7 +15,7 @@ const FacultyDashboard = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `${process.env.VITE_BACKEND_URL}/api/faculty/info/${user.email}`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/faculty/info/${user.email}`,
           {
             headers: { Authorization: `Bearer ${token}` }, // Add auth headers
           }

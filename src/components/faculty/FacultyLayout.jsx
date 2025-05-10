@@ -28,7 +28,7 @@ const FacultyLayout = () => {
     }
   
     axios
-      .get(`${process.env.VITE_BACKEND_URL}/api/users/${userId}`, {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
