@@ -32,7 +32,7 @@ const AdminDashboard = () => {
       try {
         // Simulate delay for loading state
         await new Promise(resolve => setTimeout(resolve, 800));
-        const res = await axios.get('http://localhost:3001/api/users', {
+        const res = await axios.get(`${process.env.VITE_BACKEND_URL}/api/users`, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
         setUsers(res.data);
@@ -48,7 +48,7 @@ const AdminDashboard = () => {
   // Handle user deletion
   const handleDeleteUser = async (userId) => {
     try {
-      await axios.delete(`http://localhost:3001/api/users/${userId}`, {
+      await axios.delete(`${process.env.VITE_BACKEND_URL}/api/users/${userId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       setUsers(users.filter(user => user._id !== userId));

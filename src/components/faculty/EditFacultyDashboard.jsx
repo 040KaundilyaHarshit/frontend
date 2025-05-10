@@ -39,7 +39,7 @@ const EditFacultyDashboard = () => {
         const userId = localStorage.getItem("userId");
         if (userId) {
           //https://backend-silk-tau-85.vercel.app/
-          axios.get(`http://localhost:3001/api/users/${userId}`, {
+          axios.get(`${process.env.VITE_BACKEND_URL}/api/users/${userId}`, {
             headers: { Authorization: `Bearer ${storedToken}` },
           })
           .then(res => {
@@ -57,7 +57,7 @@ const EditFacultyDashboard = () => {
     } else {
       const userId = localStorage.getItem("userId");
       if (userId) {
-        axios.get(`http://localhost:3001/api/users/${userId}`, {
+        axios.get(`${process.env.VITE_BACKEND_URL}/api/users/${userId}`, {
           headers: { Authorization: `Bearer ${storedToken}` },
         })
         .then(res => {
@@ -80,7 +80,7 @@ const EditFacultyDashboard = () => {
 
       try {
         const res = await axios.get(
-          `http://localhost:3001/api/faculty/info/${userEmail}`,
+          `${process.env.VITE_BACKEND_URL}/api/faculty/info/${userEmail}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -132,7 +132,7 @@ const EditFacultyDashboard = () => {
 
     try {
       await axios.put(
-        `http://localhost:3001/api/faculty/info`,
+        `${process.env.VITE_BACKEND_URL}/api/faculty/info`,
         {
           email: userEmail,
           name: info.name,

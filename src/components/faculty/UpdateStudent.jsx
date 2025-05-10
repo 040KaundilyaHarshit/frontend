@@ -42,7 +42,7 @@ export default function UpdateStudent() {
 
       // Fetch student name
       axios
-        .get(`http://localhost:3001/api/faculty/student-info/${studentId}`)
+        .get(`${process.env.VITE_BACKEND_URL}/api/faculty/student-info/${studentId}`)
         .then((res) => {
           setStudentName(res.data.name || "Unknown Student");
         })
@@ -68,7 +68,7 @@ export default function UpdateStudent() {
     };
 
     try {
-      const res = await axios.put("http://localhost:3001/api/faculty/update-student", payload);
+      const res = await axios.put(`${process.env.VITE_BACKEND_URL}/api/faculty/update-student`, payload);
       setSuccessMessage("✅ Student dashboard updated successfully!");
       setErrorMessage("");
       setTimeout(() => setSuccessMessage(""), 3000);

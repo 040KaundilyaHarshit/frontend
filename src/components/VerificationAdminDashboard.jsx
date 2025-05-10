@@ -5,7 +5,7 @@ import { FaSearch, FaUsers, FaBook } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./VerificationAdminDashboard.css";
 
-const API_BASE_URL = "http://localhost:3001/api";
+const API_BASE_URL = `${process.env.VITE_BACKEND_URL}/api`;
 
 const VerificationAdminDashboard = () => {
   const [students, setStudents] = useState([]);

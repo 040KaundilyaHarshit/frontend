@@ -22,7 +22,7 @@ const StudentList = () => {
 
     const fetchStudents = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/faculty/students", {
+        const response = await axios.get(`${process.env.VITE_BACKEND_URL}/api/faculty/students`, {
           headers: { Authorization: `Bearer ${storedToken}` }
         });
         setStudents(response.data);

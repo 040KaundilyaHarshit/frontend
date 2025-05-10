@@ -40,7 +40,7 @@ const NewNotice = () => {
       if (id) {
         // Update existing notice
         const res = await axios.put(
-          `http://localhost:3001/api/notices/${id}`,
+          `${process.env.VITE_BACKEND_URL}/api/notices/${id}`,
           { title, description, link },
           {
             headers: {
@@ -52,7 +52,7 @@ const NewNotice = () => {
       } else {
         // Create new notice
         const res = await axios.post(
-          "http://localhost:3001/api/notices",
+          `${process.env.VITE_BACKEND_URL}/api/notices`,
           { title, description, link },
           {
             headers: {

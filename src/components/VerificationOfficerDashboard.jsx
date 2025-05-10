@@ -10,7 +10,7 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 import "./VerificationOfficerDashboard.css";
 
 // API Base URL
-const API_BASE_URL = "http://localhost:3001/api";
+const API_BASE_URL = `${process.env.VITE_BACKEND_URL}/api`;
 
 const VerificationOfficerDashboard = () => {
   const [assignedApplications, setAssignedApplications] = useState([]);

@@ -28,7 +28,7 @@ const FacultyLayout = () => {
     }
   
     axios
-      .get(`http://localhost:3001/api/users/${userId}`, {
+      .get(`${process.env.VITE_BACKEND_URL}/api/users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {

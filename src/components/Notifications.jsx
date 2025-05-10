@@ -10,7 +10,8 @@ const Notifications = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API_BASE_URL = "http://localhost:3001/api";
+  const API_BASE_URL = `${process.env.VITE_BACKEND_URL}/api`;
+  
 
   const getAuthHeaders = () => {
     const token = localStorage.getItem("token");

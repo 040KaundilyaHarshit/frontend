@@ -15,7 +15,7 @@ const Payment = () => {
     const fetchUserDetails = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch("http://localhost:3001/api/payments/user-details", {
+        const response = await fetch(`${process.env.VITE_BACKEND_URL}/api/payments/user-details`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -33,7 +33,7 @@ const Payment = () => {
     const fetchAppliedCourses = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch("http://localhost:3001/api/payments/applied-courses", {
+        const response = await fetch(`${process.env.VITE_BACKEND_URL}/api/payments/applied-courses`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -52,7 +52,7 @@ const Payment = () => {
     const fetchPaymentHistory = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch("http://localhost:3001/api/payments/history", {
+        const response = await fetch(`${process.env.VITE_BACKEND_URL}/api/payments/history`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -85,7 +85,7 @@ const Payment = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:3001/api/payments/process", {
+      const response = await fetch(`${process.env.VITE_BACKEND_URL}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

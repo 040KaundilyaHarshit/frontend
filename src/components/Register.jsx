@@ -16,7 +16,8 @@ const Register = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:3001/register", {
+      // const res = await axios.post("https://backend-silk-tau-85.vercel.app/register", {
+      const res = await axios.post(`${process.env.VITE_BACKEND_URL}/register`, {
         name,
         email,
         password,
