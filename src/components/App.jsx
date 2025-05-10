@@ -22,7 +22,7 @@ import VerificationOfficerDashboard from "./VerificationOfficerDashboard";
 import VerificationOfficerCreation from "./VerificationOfficerCreation";
 import ApplicationForm from "./ApplicationForm";
 import ChangePassword from "./ChangePassword";
-import NewNotice from "./newNotice";
+import NewNotice from "./NewNotice";
 import AdminDetails from "./AdminDetails"; 
 import Payment from "./Payment";
 import RoleCreation from "./RoleCreation";
