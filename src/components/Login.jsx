@@ -17,7 +17,7 @@ const Login = () => {
         setLoading(true);
 
         try {
-            const res = await axios.post('http://localhost:3001/login', { email, password });
+            const res = await axios.post('https://backend-silk-tau-85.vercel.app/login', { email, password });
 
             // Destructure token, userId, and role from the response
             const { token, userId, role } = res.data;
