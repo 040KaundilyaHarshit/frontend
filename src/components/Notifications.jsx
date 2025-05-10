@@ -39,7 +39,7 @@ const Notifications = () => {
   const markAsRead = async (applicationId) => {
     try {
       await axios.post(
-        `${API_BASE_URL}/student-notifications/mark-comments-read/${applicationId}`,
+        `${process.env.VITE_BACKEND_URL}/student-notifications/mark-comments-read/${applicationId}`,
         {},
         getAuthHeaders()
       );

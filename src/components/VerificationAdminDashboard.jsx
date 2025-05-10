@@ -176,7 +176,7 @@ const VerificationAdminDashboard = () => {
     setCourseApplications([]);
     try {
       const res = await axios.post(
-        `${API_BASE_URL}/verification-admin/courses/${selectedCourse._id}/assign-officers`,
+        `${process.env.VITE_BACKEND_URL}/verification-admin/courses/${selectedCourse._id}/assign-officers`,
         { batchSize },
         getAuthHeaders()
       );
@@ -204,7 +204,7 @@ const VerificationAdminDashboard = () => {
     setCourseApplications([]);
     try {
       const res = await axios.post(
-        `${API_BASE_URL}/verification-admin/courses/${selectedCourse._id}/unassign-officers`,
+        `${process.env.VITE_BACKEND_URL}/verification-admin/courses/${selectedCourse._id}/unassign-officers`,
         {},
         getAuthHeaders()
       );

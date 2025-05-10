@@ -115,7 +115,7 @@ const VerificationOfficerDashboard = () => {
 
     try {
       const res = await axios.post(
-        `${API_BASE_URL}/verification-officer/verify-application/${applicationId}`,
+        `${process.env.VITE_BACKEND_URL}/verification-officer/verify-application/${applicationId}`,
         { verified, comments, fieldComments },
         getAuthHeaders()
       );
@@ -131,7 +131,7 @@ const VerificationOfficerDashboard = () => {
   const saveComments = async (applicationId) => {
     try {
       const res = await axios.post(
-        `${API_BASE_URL}/verification-officer/save-application-comments/${applicationId}`,
+        `${process.env.VITE_BACKEND_URL}/verification-officer/save-application-comments/${applicationId}`,
         { comments, fieldComments },
         getAuthHeaders()
       );
